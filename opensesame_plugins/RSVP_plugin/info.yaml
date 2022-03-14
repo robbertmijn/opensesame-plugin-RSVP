@@ -16,7 +16,7 @@ controls:
     var: "_distractors"
     label: "Distractors"
     name: "distractors_widget"
-    tooltip: "Enter target character For example: 'qwertyuiopasdfghjklzxcvbnm'"
+    tooltip: "Enter distractor characters. For example: 'qwertyuiopasdfghjklzxcvbnm'"
 -
     type: "spinbox"
     var: "_ntargets"
