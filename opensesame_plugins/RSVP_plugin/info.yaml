@@ -1,10 +1,19 @@
 description: RSVP plug-in.
-version: 0.4
+version: 0.3
 author: "Robbert van der Mijn"
 url: "http://robbertmijn.nl/"
 category: "Visual stimuli"
 date: "2021"
 controls:
+-
+    type: "combobox"
+    var: "_mode"
+    label: "Mode"
+    options:
+    - "text"
+    - "images"
+    name: "mode_widget"
+    tooltip: "Select type of stimuli"
 -
     type: "line_edit"
     var: "_targets"
@@ -16,7 +25,7 @@ controls:
     var: "_distractors"
     label: "Distractors"
     name: "distractors_widget"
-    tooltip: "Enter distractor characters. For example: 'qwertyuiopasdfghjklzxcvbnm'"
+    tooltip: "Enter target character For example: 'qwertyuiopasdfghjklzxcvbnm'"
 -
     type: "spinbox"
     var: "_ntargets"
