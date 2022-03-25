@@ -1,5 +1,5 @@
 description: RSVP plug-in.
-version: 0.4
+version: 0.3
 author: "Robbert van der Mijn"
 url: "http://robbertmijn.nl/"
 category: "Visual stimuli"
@@ -21,11 +21,29 @@ controls:
     name: "targets_widget"
     tooltip: "Enter target characters. For example: '123456789'"
 -
+    type: "combobox"
+    var: "_targets_shuffle"
+    label: "Shuffle target"
+    options:
+    - "yes"
+    - "no"
+    name: "targets_shuffle_widget"
+    tooltip: "Present targets in random order"
+-
     type: "line_edit"
     var: "_distractors"
     label: "Distractors"
     name: "distractors_widget"
     tooltip: "Enter target character For example: 'qwertyuiopasdfghjklzxcvbnm'"
+-
+    type: "combobox"
+    var: "_distractors_shuffle"
+    label: "Shuffle distractors"
+    options:
+    - "yes"
+    - "no"
+    name: "distractors_shuffle_widget"
+    tooltip: "Present distractors in random order"
 -
     type: "spinbox"
     var: "_ntargets"

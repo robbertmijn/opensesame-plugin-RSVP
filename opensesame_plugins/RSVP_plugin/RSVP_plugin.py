@@ -10,6 +10,7 @@ from libopensesame.item import item
 from libqtopensesame.items.qtautoplugin import qtautoplugin
 from openexp.canvas import canvas
 import numpy as np
+import random
 
 class RSVP_plugin(item):
 
@@ -27,12 +28,11 @@ class RSVP_plugin(item):
 		desc:
 			Resets plug-in to initial values.
 		"""
-		self.var._mode = "images"
-		# self.var._targets = u'4;8'
-		self.var._targets = u'test_faces_00001.jpg;test_faces_00002.jpg;test_faces_00003.jpg;'
-
-		# self.var._distractors = u'q;w;e;r;t;y;u;i;o;p;a;s;d;f;g;h'
-		self.var._distractors = u'test_faces_00004.jpg;test_faces_00005.jpg;test_faces_00006.jpg;'
+		self.var._mode = "text"
+		self.var._targets = u'4;8'
+		self.var._targets_shuffle = u'no'
+		self.var._distractors = u'q;w;e;r;t;y;u;i;o;p;a;s;d;f;g;h;j;k;l;z;x;c;v;b;n;m'
+		self.var._distractors_shuffle = u'no'
 		self.var._ntargets = 2
 		self.var._ndistractors = 15
 		self.var._target_positions = u'5;7'
@@ -45,16 +45,43 @@ class RSVP_plugin(item):
 		# Call the parent constructor.
 		item.prepare(self)
 
+		# get target positions from GUI
 		target_positions = [int(x) - 1 for x in self.var._target_positions.split(';')]
-		targets = self.var._targets.split(';')
-		distractors = self.var._distractors.split(';')
+		
+		# get target/distractor identities from text file, or from the GUI directly
+		if ".txt" in self.var._targets:
+			with open(self.experiment.pool[self.var._targets]) as f:
+				targets = f.read()
+				targets = targets.split('\n')
+		else:
+			targets = self.var._targets.split(';')
 
+		if ".txt" in self.var._distractors:
+			with open(self.experiment.pool[self.var._distractors]) as f:
+				distractors = f.read()
+				distractors = distractors.split('\n')
+		else:
+			distractors = self.var._distractors.split(';')
+
+		# populate a list with canvasses
 		self.cnvs_stream = {}
+
+		# for each stimulus in the stream, we check if it needs to be a target of a distractor
 		for i in range(self.var._ndistractors + self.var._ntargets):
 			if i in target_positions:
-				t = targets.pop(0)
+				# pop a random target from the list or take the first element
+				if self.var._targets_shuffle == "yes":
+					t = targets.pop(random.randint(0,len(targets)-1))
+				else:
+					t = targets.pop(0)
+
+				# create empty canvas
 				self.cnvs_stream[str(i)] = canvas(self.experiment)
+
+				# Add text or image from file to canvas
+				# TODO: build in checks and warnings here
 				if self.var._mode == "text":
+					# TODO: allow control of how text is formatted (maybe use skecthpad functionality?)
 					self.cnvs_stream[str(i)].text(
 					"<span style='color:rgba(0,0,0,.01)'>gb</span>{}<span style='color:rgba(0,0,0,.01)'>gb</span>".format(t),
 					font_size=48,
@@ -68,7 +95,13 @@ class RSVP_plugin(item):
 				self.var.set('stim_%d' % i, t)
 
 			else:
-				d = distractors.pop(0)
+				# pop a random distractor from the list or take the first element
+				if self.var._distractors_shuffle == "yes":
+					d = distractors.pop(random.randint(0,len(distractors)-1))
+				else:
+					d = distractors.pop(0)
+
+				# create empty canvas
 				self.cnvs_stream[str(i)] = canvas(self.experiment)
 				if self.var._mode == "text":
 

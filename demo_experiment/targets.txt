@@ -1,4 +1,0 @@
-test_faces_00019.jpg
-test_faces_00020.jpg
-test_faces_00021.jpg
-test_faces_00022.jpg
