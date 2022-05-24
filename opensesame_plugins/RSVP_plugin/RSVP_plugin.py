@@ -30,14 +30,15 @@ class RSVP_plugin(item):
 		"""
 		self.var._mode = "text"
 		self.var._targets = u'4;8'
+		self.var._ntargets = 2
 		self.var._targets_shuffle = u'no'
 		self.var._distractors = u'q;w;e;r;t;y;u;i;o;p;a;s;d;f;g;h;j;k;l;z;x;c;v;b;n;m'
-		self.var._distractors_shuffle = u'no'
-		self.var._ntargets = 2
 		self.var._ndistractors = 15
+		self.var._distractors_shuffle = u'no'
 		self.var._target_positions = u'5;7'
 		self.var._stimdur = 300
 		self.var._fixdur = 1000
+		self.var._isi = 50
 		# self.var._event_handler = u'print(10)'
 
 	def prepare(self):

@@ -21,6 +21,16 @@ controls:
     name: "targets_widget"
     tooltip: "Enter target characters. For example: '123456789'"
 -
+    type: "spinbox"
+    var: "_ntargets"
+    label: "Number of targets"
+    min_val: 0
+    max_val: 100000
+    name: "ntargets_widget"
+    prefix: ""
+    suffix: ""
+    tooltip: "Enter the number of targets in the stream"
+-
     type: "combobox"
     var: "_targets_shuffle"
     label: "Shuffle target"
@@ -36,25 +46,6 @@ controls:
     name: "distractors_widget"
     tooltip: "Enter target character For example: 'qwertyuiopasdfghjklzxcvbnm'"
 -
-    type: "combobox"
-    var: "_distractors_shuffle"
-    label: "Shuffle distractors"
-    options:
-    - "yes"
-    - "no"
-    name: "distractors_shuffle_widget"
-    tooltip: "Present distractors in random order"
--
-    type: "spinbox"
-    var: "_ntargets"
-    label: "Number of targets"
-    min_val: 0
-    max_val: 100000
-    name: "ntargets_widget"
-    prefix: ""
-    suffix: ""
-    tooltip: "Enter the number of targets in the stream"
--
     type: "spinbox"
     var: "_ndistractors"
     label: "Number of distrators"
@@ -64,6 +55,15 @@ controls:
     prefix: ""
     suffix: ""
     tooltip: "Enter the number of distrators in the stream"
+-
+    type: "combobox"
+    var: "_distractors_shuffle"
+    label: "Shuffle distractors"
+    options:
+    - "yes"
+    - "no"
+    name: "distractors_shuffle_widget"
+    tooltip: "Present distractors in random order"
 -
     type: "spinbox"
     var: "_stimdur"
@@ -90,3 +90,13 @@ controls:
     label: "Positions of the targets"
     name: "target_positions_widget"
     tooltip: "Enter target positions, use ; to separate. Example: '5;6'"
+-
+    type: "spinbox"
+    var: "_isi"
+    label: "Inter stimulus interval"
+    min_val: 0
+    max_val: 100000
+    name: "isi_widget"
+    prefix: ""
+    suffix: "ms"
+    tooltip: "Duration of the inter stimulus interval"
