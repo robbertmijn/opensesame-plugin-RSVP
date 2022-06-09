@@ -91,6 +91,8 @@ class RSVP_plugin(item):
 		self.set_item_onset(self.cnvs_fix.show())
 		# self.var.fix_onset = clock.time()
 		self.sleep(self.var._fixdur)
+        # add interstimulus interval
+        self.cnvs_isi.show(self.var._isi)
 		# prev = 0
 
 		for i in range(self.var._ndistractors + self.var._ntargets):
