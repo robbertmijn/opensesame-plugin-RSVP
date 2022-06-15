@@ -1,5 +1,7 @@
 # OpenSesame RSVP plug-in
 
+![RSVP_plugin](/opensesame_plugins/RSVP_plugin/RSVP_plugin_large.png)
+
 ## About
 
 This plug-in allows you to add a Rapid Serial Visual Presentation element to your experiment.
@@ -38,6 +40,24 @@ The plug-in should appear in the toolbar, under the category 'Visual stimuli'.
 
 ## Usage
 
+The plugin looks as follows:
+
+![GUI](/GUI.png)
+
+The plugin shows several elements that can be adjusted to one's wishes. The following elements
+can be adjusted:
+* mode (text or images)
+* targets
+* number of targets
+* shuffle targets
+* distractors
+* number of distractors
+* shuffle distractors
+* stimulus duration
+* fixation duration
+* positions of the targets
+* inter stimulus interval
+
 While building the experiment, one can drag the plug-in to the correct place in the trial
 sequence.  Moreover, with inline scripts the variables like the targets and distractors can be
 defined. In the experiment sequence, one should use an inline script to specify the targets 
@@ -56,18 +76,23 @@ are referred to in the textfile, should all be in the filepool.
 When referring to multiple targets, distractors, or positions in the widget, these should be
 split by a semicolon (';').
 
+#### Text stimuli
+If the stimuli are **text**, one can type in the target text in the widget, separated by a 
+semicolon (';').Another option is to make a textfile ('.txt') with a list of all target words, 
+separated by a new line ('/n'). This textfile should be added to the **filepool**, and the 
+name of this textfile can be filled in in the widget. For example, the file can be named 
+'targets.txt' and this should be filled in in the widget, of course without the quotes. The same 
+goes for the distractors.
+
+#### Image stimuli
+If the stimuli are **images**, one should **always add all images** of the experiment to the 
+**filepool**. In addition, a textfile can be created with a list of all targets. This textfile 
+contains all filenames of the images and these files are separated by an enter. The textfile is 
+also added to the filepool and can be referred to in the widget, instead of listing all files 
+separated by a semicolon. This is the same for the distractors.
+
 ## License
 
 No rights reserved. All files in this repository are released into the public domain.
-
-
-
-
-
-
-
-
-
-
 
 
