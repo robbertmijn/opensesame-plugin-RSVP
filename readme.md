@@ -34,7 +34,7 @@ pip.main(['install', 'opensesame-plugin-rsvp'])
 
 The plug-in should appear in the toolbar, under the category 'Visual stimuli'. 
 
-! [Image of plug-in in OpenSesame](https://github.com/robbertmijn/opensesame-plugin-RSVP/tree/readme/OS_plugin_image.png)
+<img width="356" alt="OS_plugin_image" src="https://user-images.githubusercontent.com/99414733/173846109-1f5c93a3-07ab-4c86-a0e1-96cd4f6ded25.png">
 
 ## Usage
 
