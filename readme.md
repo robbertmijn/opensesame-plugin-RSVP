@@ -44,8 +44,8 @@ The plugin looks as follows:
 
 ![GUI](/GUI.png)
 
-The plugin shows several elements that can be adjusted to one's wishes. The following elements
-can be adjusted:
+The plugin shows several features that can be adjusted to the purposes of one's experiment. The 
+following elements can be adjusted:
 * mode (text or images)
 * targets
 * number of targets
