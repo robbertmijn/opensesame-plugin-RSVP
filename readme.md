@@ -94,5 +94,3 @@ separated by a semicolon. This is the same for the distractors.
 ## License
 
 No rights reserved. All files in this repository are released into the public domain.
-
-
