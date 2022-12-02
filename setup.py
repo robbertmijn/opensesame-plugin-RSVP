@@ -12,7 +12,7 @@ setup(
 	# Some general metadata. By convention, a plugin is named:
 	# opensesame-plugin-[plugin name]
 	name='opensesame-plugin-RSVP',
-	version='0.9',
+	version='0.10',
 	description='Add an RSVP task to an OpenSesame experiment',
 	author='Robbert van der Mijn',
 	author_email='robbertmijn@gmail.com',
@@ -25,9 +25,9 @@ setup(
 		'Environment :: Win32 (MS Windows)',
 		'Environment :: X11 Applications',
 		'License :: OSI Approved :: Apache Software License',
-		'Programming Language :: Python :: 2',
 		'Programming Language :: Python :: 3',
 	],
+	packages=[],
 	# The important bit that specifies how the plugin files should be installed,
 	# so that they are found by OpenSesame. This is a bit different from normal
 	# Python modules, because an OpenSesame plugin is not a (normal) Python
