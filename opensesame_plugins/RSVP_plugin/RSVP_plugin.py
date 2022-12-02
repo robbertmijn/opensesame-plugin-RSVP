@@ -1,8 +1,11 @@
 #-*- coding:utf-8 -*-
 
 """
-No rights reserved. All files in this repository are released into the public
-domain.
+author:
+
+Robbert van der Mijn
+robbertmijn@gmail.com
+
 """
 
 from libopensesame.py3compat import *
@@ -37,9 +40,7 @@ class RSVP_plugin(item):
 		self.var._distractors_shuffle = u'no'
 		self.var._target_positions = u'5;7'
 		self.var._stimdur = 300
-		self.var._fixdur = 1000
 		self.var._isi = 50
-		# self.var._event_handler = u'print(10)'
 
 	def prepare(self):
 
@@ -120,30 +121,11 @@ class RSVP_plugin(item):
 
 		# create fixation canvas	
 		self.cnvs_fix = canvas(self.experiment)
-		self.cnvs_fix.fixdot()
-
-		# # Byte-compile the event handling code (if any)
-		# event_handler = self.var.get('_event_handler', _eval=False)
-		# if event_handler:
-		# 	custom_event_handler = self.python_workspace._compile(
-		# 		event_handler
-		# 	)
-		# else:
-		# 	custom_event_handler = None
 
 	def run(self):
 
-		#fixation dot
-		self.set_item_onset(self.cnvs_fix.show())
-		# self.var.fix_onset = clock.time()
-		self.sleep(self.var._fixdur)
-		# prev = 0
-
 		for i in range(self.var._ndistractors + self.var._ntargets):
 			t = self.cnvs_stream[str(i)].show()
-			# print(t - prev)
-			# prev = t
-
 			self.sleep(self.var._stimdur)
 
 

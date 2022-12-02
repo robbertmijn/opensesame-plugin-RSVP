@@ -1,9 +1,9 @@
 description: RSVP plug-in.
-version: 0.9
+version: 0.10
 author: "Robbert van der Mijn"
 url: "http://robbertmijn.nl/"
 category: "Visual stimuli"
-date: "2021"
+date: "2022"
 controls:
 -
     type: "combobox"
@@ -74,16 +74,6 @@ controls:
     prefix: ""
     suffix: "ms"
     tooltip: "Duration of each of the stimuli"
--
-    type: "spinbox"
-    var: "_fixdur"
-    label: "Fixation Duration"
-    min_val: 0
-    max_val: 100000
-    name: "fixdur_widget"
-    prefix: ""
-    suffix: "ms"
-    tooltip: "Duration of fixation before the RSVP"
 -
     type: "line_edit"
     var: "_target_positions"
