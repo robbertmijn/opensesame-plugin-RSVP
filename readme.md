@@ -30,7 +30,7 @@ The plugin works for OpenSesame, so make sure to have installed [OpenSesame](htt
 Next, install the RSVP plugin in OpenSesame as follows:
 ```
 import pip
-pip.main(['instal', 'opensesame-plugin-rsvp'])
+pip.main(['install', 'opensesame-plugin-rsvp'])
 ```
 
 ## Usage
