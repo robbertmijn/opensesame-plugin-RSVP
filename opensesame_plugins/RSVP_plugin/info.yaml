@@ -1,5 +1,5 @@
 description: RSVP plug-in.
-version: 0.10
+version: 0.11
 author: "Robbert van der Mijn"
 url: "http://robbertmijn.nl/"
 category: "Visual stimuli"
@@ -80,13 +80,3 @@ controls:
     label: "Positions of the targets"
     name: "target_positions_widget"
     tooltip: "Enter target positions, use ; to separate. Example: '5;6'"
--
-    type: "spinbox"
-    var: "_isi"
-    label: "Inter stimulus interval"
-    min_val: 0
-    max_val: 100000
-    name: "isi_widget"
-    prefix: ""
-    suffix: "ms"
-    tooltip: "Duration of the inter stimulus interval"

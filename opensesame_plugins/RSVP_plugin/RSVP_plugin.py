@@ -40,7 +40,6 @@ class RSVP_plugin(item):
 		self.var._distractors_shuffle = u'no'
 		self.var._target_positions = u'5;7'
 		self.var._stimdur = 300
-		self.var._isi = 50
 
 	def prepare(self):
 
